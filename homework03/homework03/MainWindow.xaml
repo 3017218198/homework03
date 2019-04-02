@@ -1,0 +1,116 @@
+﻿<Window x:Class="homework03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:homework03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="400">
+    <Grid>
+
+        <!--divide the page into three section, each height of which is 50, 100, the rest-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height= "*" />
+        </Grid.RowDefinitions>
+
+        <!--first section: the label of "Tip Calculator"-->
+        <TextBlock Margin="25, 0, 20, 0"
+                   Grid.Row="0"
+                   FontSize="18">
+            Tip Caculator
+        </TextBlock>
+
+        <!--second section: the label of "Enter the bill amount"-->
+        <TextBlock Margin="20, 0, 20, 0"
+                   Grid.Row="1"                  
+                   FontSize="36">
+            Enter the bill amount
+        </TextBlock>
+
+        <!--third section: the body(primary part) of this app-->
+        <!--use stack panel to implement-->
+        <StackPanel Name="MyStackPanel"
+                    Grid.Row="2"
+                    Margin="20,0,0,0">
+            
+            <TextBlock HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top"
+                       Text="Bill amount"
+                       FontSize="24"/>
+
+            <!--three main events in this box is gotFocus, lostFocus, textChanged-->
+            <TextBox Name="BillCountTextBox"
+                     Text="$0.00"
+                     TextAlignment="Right"
+                     HorizontalAlignment="Left"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Top"
+                     InputScope="Number"
+                     Width="100"
+                     FontSize="24"                     
+                     LostFocus="BillCountTextBox_LostFocus"
+                     TextChanged="BillCountTextBox_TextChanged"
+                     GotFocus="BillCountTextBox_GotFocus"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top"
+                       Text="Percent to tip"
+                       FontSize="24"
+                       Margin="0, 25, 0, 0"/>
+
+            <!--combine three radioButton in group "percentRadio"-->
+            <RadioButton Content="10%"
+                         Tag="0.1"
+                         GroupName="percentRadio"
+                         Click="Button_click"/>
+            
+            <RadioButton Content="18%"
+                         Tag="0.18"
+                         GroupName="percentRadio"
+                         IsChecked="True"
+                         Click="Button_click"/>
+            
+            <RadioButton Content="25%"
+                         Tag="0.25"
+                         GroupName="percentRadio"
+                         Click="Button_click"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top"
+                       Text="Tip amount"
+                       FontSize="24"/>
+
+            <TextBlock Name="tipAmountTextBox"
+                       Text="$0.00"
+                       TextAlignment="Right"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top"
+                       Width="100"
+                       FontSize="24"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top"
+                       Text="Total amount"
+                       FontSize="24"/>
+
+            <TextBlock x:Name="totalAmountTextBox"
+                     Text="$0.00"
+                     TextAlignment="Right"
+                     HorizontalAlignment="Left"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Top"
+                     Width="100"
+                     FontSize="24"/>
+        </StackPanel>
+    </Grid>
+
+
+
+</Window>
