@@ -63,7 +63,6 @@ namespace homework03
             if (selectedRadio != null)
             {
                 tip.CalculateTip(BillCountTextBox.Text, double.Parse(selectedRadio.Tag.ToString()));
-
                 tipAmountTextBox.Text = tip.TipAmount;
                 totalAmountTextBox.Text = tip.TotalAmount;
             }          
