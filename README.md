@@ -14,3 +14,7 @@ C# homework03, by Lu Yuan, April 3rd, 2019
 #### second version(5dba278), released in 11:09, April 3rd, 2019
 1. try to build an universal app in window and android but failed (the project has been deleted)
 2. beautify the layout of window app
+
+#### third version(d2517f3), released in 10:14, April 4th, 2019
+1. beautify the layout and background color
+2. change the output of tipAmount and totalAmount from $ to ￥
