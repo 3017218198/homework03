@@ -38,7 +38,8 @@ namespace homework03
 
         private void BillCountTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            // when the text box lost focus, pay attention that the text in tip box and total box will clear up to 0
+            // BillCountTextBox.Text = tip.BillAmount;            
         }
 
         private void BillCountTextBox_TextChanged(object sender, TextChangedEventArgs e)
